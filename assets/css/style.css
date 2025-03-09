@@ -101,6 +101,7 @@ h1 {
 h2 {
   font-size: 3rem;
   letter-spacing: -0.02em;
+  text-align: center;
 }
 
 h3 {
@@ -1370,3 +1371,38 @@ p {
     }
   }
   
+/* Animación para elementos que aparecen dinámicamente */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 2s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+  text-align: center;
+}
+
+.about-text {
+  text-align: center; /* Centra los párrafos y botones */
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 300px 1fr; /* o la configuración que prefieras */
+  gap: 4rem;
+  align-items: center;      /* Centra verticalmente */
+  justify-content: center;  /* Centra horizontalmente ambas columnas */
+}
+
+.about-image {
+  margin-top: -50px; /* Ajusta el valor según lo necesites */
+}
+
+.about-image {
+  transform: translateY(-20px); /* Ajusta la cantidad a tu gusto */
+}

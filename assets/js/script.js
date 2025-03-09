@@ -122,7 +122,7 @@ const projectsData = {
           "assets/img/lapacho2.png",
           "assets/img/lapacho3.png",
           "assets/img/lapacho4.png",
-          "assets/img/lapacho5.png",
+          "assets/img/LAPACHO5.png",
           "assets/img/lapacho6.png",
           "assets/img/lapacho7.png",
           "assets/img/lapacho8.png",
@@ -326,35 +326,27 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-})(jQuery);
+})
 
-(function($) {
-  $(document).ready(function() {
-    $('#contact-form').submit(function(e) {
-      e.preventDefault();
-      var action = $(this).attr('action');
-      
-      // Opcional: muestra un loader o deshabilita el botón
-      $('#submit')
-        .after('<img src="assets/img/ajax-loader.gif" class="loader" />')
-        .attr('disabled', 'disabled');
-      
-      $.ajax({
-        url: action,
-        type: 'POST',
-        data: $(this).serialize(), // Envía todos los campos del formulario
-        success: function(response) {
-          $('#response-message').html(response).slideDown('slow');
-          $('.contact-form img.loader').fadeOut('slow', function() { $(this).remove(); });
-          $('#submit').removeAttr('disabled');
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          $('#response-message').html("❌ Error al enviar el correo.").slideDown('slow');
-          $('.contact-form img.loader').fadeOut('slow', function() { $(this).remove(); });
-          $('#submit').removeAttr('disabled');
-        }
+
+document.addEventListener("DOMContentLoaded", function() {
+      const faders = document.querySelectorAll(".fade-in");
+
+      // Puedes ajustar threshold y rootMargin según necesites
+      const appearOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      };
+
+      const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Una vez visible, se deja de observar
+        });
+      }, appearOptions);
+
+      faders.forEach(fader => {
+        appearOnScroll.observe(fader);
       });
     });
-  });
-})(jQuery);
-
