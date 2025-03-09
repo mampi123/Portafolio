@@ -61,20 +61,7 @@ function animateSkillBars() {
   });
 }
 
-  // Funcionalidad de pestañas en habilidades
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const tabContents = document.querySelectorAll('.tab-content');
 
-  tabButtons.forEach(button => {
-      button.addEventListener('click', function () {
-          tabButtons.forEach(btn => btn.classList.remove('active'));
-          tabContents.forEach(content => content.classList.remove('active'));
-          this.classList.add('active');
-          const tabId = this.getAttribute('data-tab');
-          document.getElementById(tabId).classList.add('active');
-          animateSkillBars(tabId);
-      });
-  });
 
   // Animar barras de progreso en scroll y al cambiar de pestaña
   function animateSkillBars(tabId = null) {

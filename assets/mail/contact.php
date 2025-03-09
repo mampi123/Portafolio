@@ -45,7 +45,7 @@ if ($mailEnviado) {
 } else {
     echo "❌ Ocurrió un error al enviar tu mensaje.";
 }
-} else {
+    else {
 echo "❌ Solo se permite el método POST.";
 }
 ?>
