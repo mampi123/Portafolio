@@ -1406,3 +1406,33 @@ p {
 .about-image {
   transform: translateY(-20px); /* Ajusta la cantidad a tu gusto */
 }
+
+.testimonial-card {
+  background-color: var(--card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+
+  /* Añade una sombra ligera inicial */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  /* Transiciones para transform y box-shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  /* Un pequeño “levantamiento” visual */
+  transform: translateY(-5px);
+
+  /* Sombra más fuerte al hacer hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Opcional: animar también la imagen */
+.testimonial-card .testimonial-image img {
+  transition: transform 0.3s ease;
+}
+.testimonial-card:hover .testimonial-image img {
+  transform: scale(1.05);
+}
+

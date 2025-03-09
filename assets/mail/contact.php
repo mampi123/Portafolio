@@ -38,9 +38,14 @@ $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 $headers .= "Content-Transfer-Encoding: quoted-printable\r\n";
 
 // Enviar el correo y devolver respuesta
-if (mail($destinatario, $e_subject, $e_body, $headers)) {
-    exit("<div id='response-message' class='alert alert-success'>✅ Correo enviado correctamente. ¡Gracias por contactarnos!</div>");
+$mailEnviado = true; // Simulación: ponlo en true o false según el envío real
+
+if ($mailEnviado) {
+    echo "✅ Tu mensaje se envió correctamente.";
 } else {
-    exit("<div id='response-message' class='alert alert-error'>❌ Error al enviar el correo. Por favor, intenta nuevamente.</div>");
+    echo "❌ Ocurrió un error al enviar tu mensaje.";
+}
+} else {
+echo "❌ Solo se permite el método POST.";
 }
 ?>

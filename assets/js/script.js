@@ -350,3 +350,43 @@ document.addEventListener("DOMContentLoaded", function() {
         appearOnScroll.observe(fader);
       });
     });
+
+    (function($) {
+      $(document).ready(function() {
+        $('#contact-form').submit(function(e) {
+          e.preventDefault(); // Evita la recarga
+    
+          var action = $(this).attr('action'); // assets/mail/contact.php
+          $('#response-message').slideUp(750, function() {
+            $(this).hide();
+          });
+    
+          // Muestra un loader o desactiva el botón
+          $('#submit')
+            .after('<img src="assets/img/ajax-loader.gif" class="loader" />')
+            .attr('disabled', 'disabled');
+    
+          // Envía los datos del formulario vía POST (AJAX)
+          $.post(action, {
+              name: $('#name').val(),
+              email: $('#email').val(),
+              subject: $('#subject').val(),
+              message: $('#message').val()
+            },
+            function(data) {
+              // Inyecta la respuesta (éxito/error) en #response-message
+              $('#response-message').html(data).slideDown('slow');
+    
+              // Quita el loader
+              $('.contact-form img.loader').fadeOut('slow', function() {
+                $(this).remove();
+              });
+    
+              // Reactiva el botón
+              $('#submit').removeAttr('disabled');
+            }
+          );
+        });
+      });
+    })(jQuery);
+    
