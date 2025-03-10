@@ -1594,3 +1594,33 @@ p {
 }
 
 
+/* ======= Estilos base (Escritorio) ======= */
+.about-content {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  gap: 2rem; /* Ajusta la separación si quieres */
+}
+
+.profile-image {
+  width: 180px;   /* Mantener igual que en tu diseño original */
+  height: 180px;  /* Mantener igual que en tu diseño original */
+  border-radius: 50%;
+  overflow: hidden;
+  /* Sin margin-top aquí para no moverlo en desktop */
+}
+
+/* ======= SOLO para móviles ======= */
+@media screen and (max-width: 767px) {
+  /* Cambiamos la dirección a columna en móviles */
+  .about-content {
+    flex-direction: column;
+    text-align: center;    /* Opcional: centra el texto */
+  }
+
+  .profile-image {
+    /* Agregamos margen para separarla del título o del texto */
+    margin-top: 20px; 
+    /* O margin-bottom: 20px; según dónde necesites más espacio */
+  }
+}
