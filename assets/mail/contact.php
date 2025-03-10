@@ -1,8 +1,9 @@
 <?php
-// Verifica que la petición sea POST
+// Comprobar que la petición sea POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("HTTP/1.1 405 Method Not Allowed");
-    exit("405 Method Not Allowed");
+    // Si no es POST, avisar y salir
+    echo "❌ Solo se permite el método POST.";
+    exit;
 }
 
 // Recibir y limpiar los datos del formulario
@@ -13,10 +14,10 @@ $message = trim($_POST['message'] ?? '');
 
 // Validaciones básicas
 if ($name === '' || $email === '' || $subject === '' || $message === '') {
-    exit("<div id='response-message' class='alert alert-error'>❌ Por favor completa todos los campos.</div>");
+    exit("❌ Por favor completa todos los campos.");
 }
 
-// Destinatario
+// Destinatario (cambia si corresponde)
 $destinatario = "mampelmartina@hotmail.com";
 
 // Asunto del correo
@@ -37,15 +38,12 @@ $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
 $headers .= "Content-Transfer-Encoding: quoted-printable\r\n";
 
-// Enviar el correo y devolver respuesta
-$mailEnviado = true; // Simulación: ponlo en true o false según el envío real
+// Enviar el correo con la función mail (si tu hosting lo soporta)
+$mailEnviado = mail($destinatario, $e_subject, $e_body, $headers);
 
+// Verificar resultado y responder
 if ($mailEnviado) {
     echo "✅ Tu mensaje se envió correctamente.";
 } else {
     echo "❌ Ocurrió un error al enviar tu mensaje.";
 }
-    else {
-echo "❌ Solo se permite el método POST.";
-}
-?>

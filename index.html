@@ -351,87 +351,97 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container"> 
-            <h2 class="section-title">Contacto</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>¿Tienes un proyecto en mente?</h3>
-                    <p>Estoy disponible para proyectos freelance y colaboraciones. Contáctame y conversemos sobre cómo puedo ayudarte a llevar tu presencia web al siguiente nivel.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="contact-label">Email:</span>
-                            <a href="mailto:mampelmartina@hotmail.com">mampelmartina@hotmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-label">Ubicación:</span>
-                            <span>Mendoza, Argentina</span>
-                        </div>
-
-                        <div class="contact-item">
-                            <span class="contact-label">Teléfono:</span>
-                            <a href="https://wa.me/2612405322" target="_blank" rel="noopener noreferrer">
-                              2612405322
-                            </a>
-                          </div>
-                                                  
-                    </div>
-                </div>
-                
-                <div class="contact-form-container"> <div id="response-message"></div>
-                    <form id="contact-form" class="contact-form d-flex flex-column align-items-center" action="assets/mail/contact.php" method="POST">
-                      <div class="subscribe">
-                        <div class="input-group stylish-input-group mb-4">
-                          <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" required placeholder="Tu nombre">
-                          </div>
-                        </div>
-                        
-                        <div class="input-group stylish-input-group mb-4">
-                          <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                          </div>
-                        </div>
-                        
-                        <div class="input-group stylish-input-group mb-4">
-                          <div class="form-group">
-                            <label for="subject">Asunto</label>
-                            <input type="text" id="subject" name="subject" required placeholder="Asunto de tu mensaje">
-                          </div>
-                        </div>
-                        
-                        <div class="input-group stylish-input-group mb-4">
-                          <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
-                          </div>
-                        </div>
-                        
-                        <div class="mt-5" style="margin-top: 30px;">
-                            <button id="submit" type="submit" class="btn btn-primary btn-full" style="background-color: #4a69bd; border: none; padding: 12px 30px; font-size: 16px;">
-                                <span id="submit-text">Enviar mensaje</span>
-                                <span id="submit-loading" class="hidden">Enviando...</span>
-                                <i data-feather="send"></i>
-                              </button>
-                              
-                        </div>
-                      </div>
-                    </form>
-                    <!-- Contenedor donde mostrarás la respuesta (éxito/error) -->
-                    <div id="response-message"></div>
-                  </div>
-                  
-                </div>
+   <!-- Contact Section -->
+<section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>¿Tienes un proyecto en mente?</h3>
+          <p>Estoy disponible para proyectos freelance y colaboraciones. Contáctame y conversemos sobre cómo puedo ayudarte a llevar tu presencia web al siguiente nivel.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-label">Email:</span>
+              <a href="mailto:mampelmartina@hotmail.com">mampelmartina@hotmail.com</a>
             </div>
+            <div class="contact-item">
+              <span class="contact-label">Ubicación:</span>
+              <span>Mendoza, Argentina</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Teléfono:</span>
+              <a href="https://wa.me/2612405322" target="_blank" rel="noopener noreferrer">
+                2612405322
+              </a>
+            </div>
+          </div>
         </div>
-    </section>
+        
+        <div class="contact-form-container">
+          <!-- Contenedor donde aparecerá el mensaje (éxito/error) -->
+          <div id="response-message"></div>
+          
+          <form 
+            id="contact-form" 
+            class="contact-form d-flex flex-column align-items-center" 
+            action="assets/mail/contact.php" 
+            method="POST"
+          >
+            <div class="subscribe">
+              <div class="input-group stylish-input-group mb-4">
+                <div class="form-group">
+                  <label for="name">Nombre</label>
+                  <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                </div>
+              </div>
+              
+              <div class="input-group stylish-input-group mb-4">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+              </div>
+              
+              <div class="input-group stylish-input-group mb-4">
+                <div class="form-group">
+                  <label for="subject">Asunto</label>
+                  <input type="text" id="subject" name="subject" required placeholder="Asunto de tu mensaje">
+                </div>
+              </div>
+              
+              <div class="input-group stylish-input-group mb-4">
+                <div class="form-group">
+                  <label for="message">Mensaje</label>
+                  <textarea id="message" name="message" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                </div>
+              </div>
+              
+              <div class="mt-5" style="margin-top: 30px;">
+                <button 
+                  id="submit" 
+                  type="submit" 
+                  class="btn btn-primary btn-full" 
+                  style="background-color: #4a69bd; border: none; padding: 12px 30px; font-size: 16px;"
+                >
+                  <span id="submit-text">Enviar mensaje</span>
+                  <span id="submit-loading" class="hidden">Enviando...</span>
+                  <i data-feather="send"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+          
+          <!-- Contenedor para mensaje de respuesta -->
+          <div id="response-message"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 <!-- Carga de jQuery desde CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Tu archivo de scripts -->
 <script src="assets/js/script.js"></script>
 
-    <script src="assets/js/script.js"></script>
 </body>
 </html>

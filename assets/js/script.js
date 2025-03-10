@@ -341,9 +341,11 @@ document.addEventListener("DOMContentLoaded", function() {
     (function($) {
       $(document).ready(function() {
         $('#contact-form').submit(function(e) {
-          e.preventDefault(); // Evita la recarga
+          e.preventDefault(); // Evita la recarga del formulario
     
           var action = $(this).attr('action'); // assets/mail/contact.php
+          
+          // Oculta y resetea el mensaje de respuesta, si existe
           $('#response-message').slideUp(750, function() {
             $(this).hide();
           });
@@ -354,9 +356,11 @@ document.addEventListener("DOMContentLoaded", function() {
             .attr('disabled', 'disabled');
     
           // Envía los datos del formulario vía POST (AJAX)
-          $.post(action, {
-              name: $('#name').val(),
-              email: $('#email').val(),
+          $.post(
+            action, 
+            {
+              name:    $('#name').val(),
+              email:   $('#email').val(),
               subject: $('#subject').val(),
               message: $('#message').val()
             },
@@ -376,4 +380,5 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       });
     })(jQuery);
+    
     
