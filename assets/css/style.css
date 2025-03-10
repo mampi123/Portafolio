@@ -1460,72 +1460,7 @@ p {
   padding: 0;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-    "Helvetica Neue", sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
-}
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section {
-  padding: 80px 0;
-}
-
-.section-title {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 50px;
-  color: #333;
-}
-
-/* Contact grid */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 40px;
-}
-
-@media (min-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* Contact info */
-.contact-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.contact-info p {
-  margin-bottom: 30px;
-  color: #666;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: flex-start;
-}
-
-.contact-label {
-  font-weight: 600;
-  margin-right: 10px;
-  min-width: 80px;
-}
 
 .contact-item a {
   color: #4a69bd;
@@ -1542,15 +1477,7 @@ body {
   position: relative;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
+
 
 .form-group {
   display: flex;
@@ -1561,7 +1488,7 @@ body {
 .form-group label {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #555;
+  color: #ffffff;
 }
 
 .form-group input,
@@ -1590,19 +1517,7 @@ body {
 }
 
 /* Button styles */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+
 
 .btn-primary {
   background-color: #4a69bd;
