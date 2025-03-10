@@ -394,7 +394,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
               // Desactiva el botón de submit y muestra un loader (si tienes la imagen)
               $('#submit')
-                .after('<img src="assets/img/ajax-loader.gif" class="loader" />')
+                .after('<img src="assets/img/R(1).png" class="loader" />')
                 .attr('disabled', 'disabled');
     
               // Envía los datos vía POST
