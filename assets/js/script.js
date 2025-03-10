@@ -394,7 +394,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
               // Desactiva el botón de submit y muestra un loader (si tienes la imagen)
               $('#submit')
-                .after('<img src="assets/img/R(1).png" class="loader" />')
                 .attr('disabled', 'disabled');
     
               // Envía los datos vía POST
@@ -424,4 +423,81 @@ document.addEventListener("DOMContentLoaded", function() {
         });
       });
     })(jQuery);
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contact-form');
+      const submitButton = document.getElementById('submit-button');
+      const submitText = document.getElementById('submit-text');
+      const submitLoading = document.getElementById('submit-loading');
+      const notificationMessage = document.getElementById('notification-message');
+      
+      // Function to show notification
+      function showNotification(message, type) {
+        notificationMessage.textContent = message;
+        notificationMessage.classList.remove('hidden', 'success', 'error');
+        notificationMessage.classList.add(type);
+        
+        // Auto-hide notification after 5 seconds
+        setTimeout(() => {
+          hideNotification();
+        }, 5000);
+      }
+      
+      // Function to hide notification
+      function hideNotification() {
+        notificationMessage.classList.add('hidden');
+      }
+      
+      // Function to set loading state
+      function setLoading(isLoading) {
+        if (isLoading) {
+          submitButton.disabled = true;
+          submitText.classList.add('hidden');
+          submitLoading.classList.remove('hidden');
+        } else {
+          submitButton.disabled = false;
+          submitText.classList.remove('hidden');
+          submitLoading.classList.add('hidden');
+        }
+      }
+      
+      // Handle form submission
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Set loading state
+        setLoading(true);
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        
+        // Send form data using fetch
+        fetch(contactForm.action, {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Error en el envío del formulario');
+          }
+          return response.text();
+        })
+        .then(data => {
+          // Show success message
+          showNotification('Tu mensaje ha sido enviado correctamente. Gracias por contactarnos.', 'success');
+          
+          // Reset form
+          contactForm.reset();
+        })
+        .catch(error => {
+          // Show error message
+          showNotification('Ha ocurrido un error al enviar el mensaje. Por favor, inténtalo de nuevo.', 'error');
+          console.error('Error:', error);
+        })
+        .finally(() => {
+          // Reset loading state
+          setLoading(false);
+        });
+      });
+    });
     
