@@ -351,77 +351,78 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-          <h2 class="section-title">Contacto</h2>
-          <div class="contact-grid">
-            <div class="contact-info">
-              <h3>¿Tienes un proyecto en mente?</h3>
-              <p>Estoy disponible para proyectos freelance y colaboraciones. Contáctame y conversemos sobre cómo puedo ayudarte a llevar tu presencia web al siguiente nivel.</p>
-              <div class="contact-details">
-                <div class="contact-item">
-                  <span class="contact-label">Email:</span>
-                  <a href="mailto:mampelmartina@hotmail.com">mampelmartina@hotmail.com</a>
-                </div>
-                <div class="contact-item">
-                  <span class="contact-label">Ubicación:</span>
-                  <span>Mendoza, Argentina</span>
-                </div>
-                <div class="contact-item">
-                  <span class="contact-label">Teléfono:</span>
-                  <a href="https://wa.me/2612405322" target="_blank" rel="noopener noreferrer">
-                    2612405322
-                  </a>
-                </div>
-              </div>
+    <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>¿Tienes un proyecto en mente?</h3>
+          <p>Estoy disponible para proyectos freelance y colaboraciones. Contáctame y conversemos sobre cómo puedo ayudarte a llevar tu presencia web al siguiente nivel.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-label">Email:</span>
+              <a href="mailto:mampelmartina@hotmail.com">mampelmartina@hotmail.com</a>
             </div>
-            
-            <div class="contact-form-container">
-              <!-- Contenedor para el mensaje de respuesta -->
-              <div id="notification-message" class="notification hidden"></div>
-              
-              <form 
-                id="contact-form" 
-                class="contact-form" 
-                action="assets/mail/contact.php" 
-                method="POST"
-              >
-                <div class="form-group">
-                  <label for="name">Nombre</label>
-                  <input type="text" id="name" name="name" required placeholder="Tu nombre">
-                </div>
-                
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                </div>
-                
-                <div class="form-group">
-                  <label for="subject">Asunto</label>
-                  <input type="text" id="subject" name="subject" required placeholder="Asunto de tu mensaje">
-                </div>
-                
-                <div class="form-group">
-                  <label for="message">Mensaje</label>
-                  <textarea id="message" name="message" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
-                </div>
-                
-                <div class="form-submit">
-                  <button 
-                    id="submit-button" 
-                    type="submit" 
-                    class="btn btn-primary"
-                  >
-                    <span id="submit-text">Enviar mensaje</span>
-                    <span id="submit-loading" class="hidden">Enviando...</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                  </button>
-                </div>
-              </form>
+            <div class="contact-item">
+              <span class="contact-label">Ubicación:</span>
+              <span>Mendoza, Argentina</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Teléfono:</span>
+              <a href="https://wa.me/2612405322" target="_blank" rel="noopener noreferrer">
+                2612405322
+              </a>
             </div>
           </div>
         </div>
-      </section>
+        
+        <div class="contact-form-container">
+          <!-- Contenedor para el mensaje de respuesta - Mejorado para mayor visibilidad -->
+          <div id="notification-message" class="notification hidden"></div>
+          
+          <form 
+            id="contact-form" 
+            class="contact-form" 
+            action="assets/mail/contact.php" 
+            method="POST"
+          >
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" required placeholder="Tu nombre">
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="tu@email.com">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Asunto</label>
+              <input type="text" id="subject" name="subject" required placeholder="Asunto de tu mensaje">
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+            
+            <div class="form-submit">
+              <button 
+                id="submit-button" 
+                type="submit" 
+                class="btn btn-primary"
+              >
+                <span id="submit-text">Enviar mensaje</span>
+                <span id="submit-loading" class="hidden">Enviando...</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
   
 <!-- Carga de jQuery desde CDN -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
