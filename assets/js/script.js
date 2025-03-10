@@ -380,4 +380,48 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     })(jQuery);
     
+    (function($) {
+      $(document).ready(function() {
+        $('.contact-form').each(function() {
+          var formInstance = $(this);
+          formInstance.submit(function(e) {
+            e.preventDefault();
+            var action = $(this).attr('action');
+    
+            // Oculta y desliza el contenedor de respuesta, si existe
+            $("#response-message").slideUp(750, function() {
+              $('#response-message').hide();
+    
+              // Desactiva el botón de submit y muestra un loader (si tienes la imagen)
+              $('#submit')
+                .after('<img src="assets/img/ajax-loader.gif" class="loader" />')
+                .attr('disabled', 'disabled');
+    
+              // Envía los datos vía POST
+              $.post(action, {
+                  name: $('#name').val(),
+                  email: $('#email').val(),
+                  subject: $('#subject').val(),
+                  message: $('#message').val()
+                },
+                function(data) {
+                  // Inyecta la respuesta en #response-message
+                  document.getElementById('response-message').innerHTML = data;
+                  $('#response-message').slideDown('slow');
+    
+                  // Quita el loader
+                  $('.contact-form img.loader').fadeOut('slow', function() {
+                    $(this).remove();
+                  });
+    
+                  // Reactiva el botón
+                  $('#submit').removeAttr('disabled');
+                }
+              );
+            });
+            return false;
+          });
+        });
+      });
+    })(jQuery);
     

@@ -1436,3 +1436,13 @@ p {
   transform: scale(1.05);
 }
 
+#response-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  display: none; /* Por defecto oculto, hasta que aparezca el mensaje */
+  color: #fff;   /* Texto en blanco */
+  background-color: #4a69bd; /* Fondo acorde a tu branding */
+}
+
