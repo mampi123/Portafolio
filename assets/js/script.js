@@ -352,7 +352,6 @@ document.addEventListener("DOMContentLoaded", function() {
     
           // Muestra un loader o desactiva el botón
           $('#submit')
-            .after('<img src="assets/img/ajax-loader.gif" class="loader" />')
             .attr('disabled', 'disabled');
     
           // Envía los datos del formulario vía POST (AJAX)

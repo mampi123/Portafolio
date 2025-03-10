@@ -18,7 +18,7 @@ if ($name === '' || $email === '' || $subject === '' || $message === '') {
 }
 
 // Destinatario (cambia si corresponde)
-$destinatario = "mampelmartina@hotmail.com";
+$destinatario = "mampelmartina@gmail.com";
 
 // Asunto del correo
 $e_subject = "Nuevo Contacto - $subject";
